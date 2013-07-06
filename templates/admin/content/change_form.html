@@ -1,0 +1,18 @@
+{% extends "admin/change_form.html"%}
+{% block extrahead %}
+    {{ block.super }}
+    <script type="text/javascript">
+        var options={
+            allowFileManager:true,
+            height:400
+        }
+        django.jQuery(document).ready(function(){
+                django.jQuery("textarea").each(function(){
+                    element=django.jQuery(this);
+                    KindEditor.ready(function(K){
+                        K.create(element,options);
+                        });
+                    });
+                });
+    </script>
+{%endblock%}

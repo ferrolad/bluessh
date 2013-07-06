@@ -1,0 +1,44 @@
+﻿{% extends 'base.html'%}
+
+{%block head%}
+    <link media="all" rel="stylesheet" href="/static/css/usercenter.css" type="text/css" />
+    <link media="all" rel="stylesheet" href="/static/js/jconfirmaction/jconfirmaction.css" type="text/css" />
+    <script type="text/javascript" src="/static/js/jconfirmaction/jconfirmaction.js"></script>
+{%endblock%}
+
+{%block title%}
+    用户中心 — BlueSSH
+{%endblock%}
+
+{%block content%}
+    <div id="usercenter_content">
+        <div id="content_left" >            
+            <a href="/usercenter/cart/">购物车</a>
+			<a href="/usercenter/">我的账号</a>
+            <a href="/usercenter/invite/">邀请返利</a>
+            <a href="/usercenter/password_change/">修改密码</a>
+            <script type="text/javascript">
+                $(function(){
+                        $('.logout_cfm').jConfirmAction({question:"确定退出登录？",
+                            yesAnswer:"是",cancelAnswer:"否" });
+                        });
+            </script>
+        </div>
+        <div id="content_right">
+            <div style="text-align:right;"> 
+                {% if user.is_authenticated %}
+                    <div class='welcome'>
+                        当前用户 ： <span style="color:green;margin-right:2px;">{{user.username}}</span>
+                        <a href="/usercenter/logout/" class='logout_cfm'>退出登录</a>
+                    </div>
+                {%else%}
+                <div class="welcome">您尚未登录 <a href="/usercenter/login/">点此登录</a> ； 
+                    如果没有帐号 <a href="/usercenter/reg/">点此注册</a></div>
+                {%endif%}
+        </div>
+        {%block content_right%}
+        {%endblock%}
+        </div>
+    </div>
+{%endblock%}
+

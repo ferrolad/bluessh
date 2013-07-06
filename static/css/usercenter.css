@@ -1,0 +1,66 @@
+﻿
+#usercenter_content{
+    height:400px;
+    clear:both;
+    background: url(/static/img/line-y.png)  220px 0 repeat-y;
+}
+
+#content_left{
+    height:200px;
+    width:18%;
+    float:left;
+    border:2px solid black;
+    text-align:center;
+    padding-top:5%;
+    margin:50px 0 0 20px;
+    line-height:150%;
+}
+
+#content_left a {
+    display:block;
+    /*font-size:;*/
+    margin:8px;
+}
+
+#content_right {
+    text-align:Center;
+    height:300px;
+    width:75%;
+    float:right;
+}
+
+.bg_gray
+{
+    text-align:center;
+    margin:0 auto;
+    background-color:#aaa;
+}
+
+#content_right form {
+    margin:20px auto;
+    line-height:200%;
+    text-align:left;
+    width:430px;
+}
+
+ul.errorlist
+{
+    margin-bottom:-15px;
+}
+
+.welcome{
+    margin:10px;
+}
+
+ul.errorlist{
+    color:red;
+    font-size:0.9em;
+}
+span.helptext{
+    margin-left:5px;
+    font-size:0.7em;
+    color:#999999;
+}
+
+
+

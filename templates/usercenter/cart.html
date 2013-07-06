@@ -1,0 +1,78 @@
+{% extends 'usercenter/usercenter.html'%}
+{% block title%}
+	购物车 - BlueSSH
+{% endblock %}
+
+{%block content_right%}
+
+    {% for item in cart %}
+    
+        {% if forloop.first %}
+        <table class='no_ver_border' style='width:650px;'>
+            <caption><h3>我的购物车</h3><br/></caption>
+            <tr style='background:#bbb;'>
+                <td>商品名称</td>
+                <td>有效期</td>
+                <td>单价</td>
+                <td>数量</td>
+                <td>小计</td>
+                <td></td>
+            </tr>
+        {% endif %}
+            <tr style='background:lightgray;'>
+                <td>{{ item.product.name }}</td>
+                <td>{{ item.product.valid_months }}个月</td>
+                <td>￥{{ item.product.price }} 元</td>
+                <td>{{ item.quantity }} 件</td>
+                <td>￥{{ item.total_price }} 元</td>
+                <td><a href='/usercenter/cart/remove/{{item.product.id}}'>删除</a></td>
+            </tr>
+        
+        {% if forloop.last %}
+            <!--<tr>-->
+                <!--<td colspan='5'>-->
+                    <!--<label for="discount_code">输入优惠码（仅供亲友使用）：</label>-->
+                    <!--<input type="text" name='discount_code' />-->
+                    <!--&nbsp<button type='button'>验证优惠码</button>-->
+                <!--</td>-->
+                <!--<td colspan='2'></td>-->
+            <!--</tr>-->
+            <tr>
+                <th>合 计</td>
+                <td colspan='2'>
+                </td>
+                <th>商品总价:</th> 
+                <th>￥{{cart.total_fee}}  元</th> 
+                <th></th> 
+            </tr>
+            <tr>
+                <td colspan='2' style="border-bottom:none">
+                </td>
+                <td colspan='1' style="border-bottom:none">
+                    <div style="text-align:right;">
+                        <a href="/paypal/checkout/" target="_blank">
+                            <img src="/static/img/content/paypal.gif" style="height:35px;width:150px"
+                                alt="pay with paypal" title="pay with paypal"/>
+                        </a>
+                    </div>
+                </td>
+                <td colspan='3' style="border-bottom:none">
+                    <div style="text-align:right;">
+                        <a href="/alipay/checkout/" target="_blank">
+                            <img src="/static/img/content/alipay.png" style="height:35px;width:150px"
+                                alt="使用支付宝付款" title="使用支付宝付款" />
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        {% endif %}
+    {% empty %}
+    <h3>购物车为空</h3>
+    {% endfor %}
+    <br>
+    <div >
+        还不够？<a style="font-size:14pt" href="/content/ssh+vpn/">继续购买</a>
+    </div>
+{%endblock%}

@@ -1,0 +1,69 @@
+{% extends "content/content.html" %}
+{% block title %}
+    免费SSH帐号 - BlueSSH.com
+{% endblock %}
+
+{% block content %}
+<div style="text-align:center;width:100%;background-color:rgb(238,238,238);">
+    <div style="width:65%;text-align:left;margin:-30px auto 0;">
+        <table class="no_ver_border">
+            <tr>
+                <td colspan=2>
+                    <h3 style="text-align:center">免费SSH测试帐号</h3>
+                </td>
+            </tr>
+            <tr>
+                <th style="text-align:right">服务器：</th>
+                <td style="text-align:left;">free.bluessh.com</td>
+            </tr>
+            <tr>
+                <th style="text-align:right">端口号：</th>
+                <td style="text-align:left">80&nbsp;或&nbsp;443</td>
+            </tr>
+            <tr>
+                <th style="text-align:right">用户名：</th>
+                <td style="text-align:left;color:green">{{username}}</td>
+            </tr>
+            <tr>
+                <th style="text-align:right">密&nbsp;&nbsp;&nbsp;码：</th>
+                <td style="text-align:left;color:green;width:53%">
+                    <img src="/static/img/no-cache/passwd.png" alt="密码" />
+                    <span style="color:red;margin-left:10px;">密码每半小时更换一次</span>
+                </td>
+            </tr>
+            <!--
+            <tr>
+                <td colspan=2>
+                    <a href="http://www.diaochapai.com/survey669781">
+                        <span style="text-align:center;font-size:30px;font-weight:bold;">按天购买的SSH套餐需求调查</span> 
+                            (点击参与)
+                    </a>
+                </td>
+            </tr>
+            -->
+            <tr>
+                <td style="text-align:right">上次密码更新：</td>
+                <td style="text-align:left">{{update_time|date:'Y-m-d  H:i:s'}}</td>
+            </tr>
+        </table>
+    </div>
+    <p>详细使用方法请参考&nbsp;<a href="/content/howto/">使用教程</a></p>
+    <p style="color:green;font-weight:bold;">欢迎购买无需更换密码的 <a href="/content/ssh+vpn/">付费SSH</a>，<span style="color:red;">最低每天只要2毛钱</span>
+    </p>
+    <br/>
+    <p style="text-align:center;color:gray">声明：本免费SSH帐号仅供内部测试使用，请勿用于非法用途，否则一切后果自负!</p>
+</div>
+{% endblock %}
+
+{% block share%}
+{% if 0%}
+    <!-- Baidu Button BEGIN -->
+    <script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=6&amp;uid=664799" ></script>
+    <script type="text/javascript" id="bdshell_js"></script>
+    <script type="text/javascript">
+        document.getElementById("bdshell_js").src = 
+        "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+    </script>
+    <!-- Baidu Button END -->
+{% endif%}
+{% endblock %}

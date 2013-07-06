@@ -1,0 +1,6 @@
+<script type="text/javascript">
+    <!--离开页面前刷新父页面-->
+    window.onunload =window.opener.location.reload();
+</script>
+{{ content|safe }}
+{{ submit_js|safe }}

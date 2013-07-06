@@ -1,0 +1,13 @@
+{% extends 'usercenter/usercenter.html'%}
+
+{% block title%}
+	新用户注册 - BlueSSH
+{% endblock %}
+
+{% block content_right %}
+  <div class="bg_gray"><h2>用户注册</h2></div>  
+  <form style="position:relative;left:70px;" action="" method="post">{% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="创建帐号">
+  </form>
+{% endblock %}

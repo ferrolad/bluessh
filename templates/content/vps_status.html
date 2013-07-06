@@ -1,0 +1,111 @@
+{% extends "content/content.html" %}
+{% block title %}
+    服务器状态 - BlueSSH
+{% endblock %}
+
+{% block content %}
+<div style="text-align:center;width:100%;background-color:rgb(238,238,238);">
+<div style="width:80%;text-align:left;margin:5px auto;">
+    <h3 style="text-align:center">
+        服务器实时运行状态
+    </h3>
+    <table class="tb_vps" >
+        <tbody>
+            <tr>
+                <th>
+                    地理位置
+                </th>
+                <th>
+                    IPv4地址
+                </th>
+                <th>
+                    IPv6地址
+                </th>
+                <th>
+                    开放端口
+                </th>
+                <th>
+                    带宽占用率
+                </th>
+                <th>
+                    内存占用率
+                </th>
+                <th>
+                    提供服务
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    日本（大阪） <span style="color:red">推荐</span>
+                </td>
+                <td>
+                    {% if user.is_authenticated %}
+                        jp1.bluessh.com
+                    {% else %}
+                        <a href="/usercenter/login/?next=/content/status/">登录可见</a>
+                    {%endif%}
+                </td>
+                <td>
+                    {% if user.is_authenticated %}
+                       ipv6.jp1.bluessh.com 
+                    {% else %}
+                        <a href="/usercenter/login/?next=/content/status/">登录可见</a>
+                    {%endif%}
+                </td>
+                <td>
+                    80、443
+                </td>
+                <td>
+                    <br />
+                </td>
+                <td>
+                    <br />
+                </td>
+                <td>
+                    <!--<img src="/static/img/content/yes.png" alt="提供服务" /> -->
+                    <p>SSH、VPN</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    美国（洛杉矶）
+                </td>
+                <td>
+                    {% if user.is_authenticated %}
+                        us1.bluessh.com
+                    {% else %}
+                        <a href="/usercenter/login/?next=/content/status/">登录可见</a>
+                    {%endif%}
+                </td>
+                <td>
+                    {% if user.is_authenticated %}
+                       ipv6.us1.bluessh.com 
+                    {% else %}
+                        <a href="/usercenter/login/?next=/content/status/">登录可见</a>
+                    {%endif%}
+                </td>
+                <td>
+                    80、443
+                </td>
+                <td>
+                    <br />
+                </td>
+                <td>
+                    <br />
+                </td>
+                <td>
+                    <p>SSH</p>
+                    <!--<img src="/static/img/content/no.png" alt="提供服务" /> -->
+                    <!--<p>即将上线</p>-->
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<br/>
+<p style="text-align:center;color:red">温馨提醒：请根据自己的网络环境，选择速度最快的服务器。</p>
+</div>
+
+{% endblock %}
+
+

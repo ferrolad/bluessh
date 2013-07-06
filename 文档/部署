@@ -1,0 +1,9 @@
+
+    安装：
+1、安装postfix,
+2.安装dropbear,pycrypto，paramiko,pexpect(或python-expect)
+
+    配置：
+1、必须先在ssh服务器上创建sshuser组:sudo groupadd sshuser
+2、新服务器机器批量备份： /etc/passwd,/etc/group /etc/shadow
+/Users/athurg/Downloads/bluessh_sell/文档/创建ssh用户.sh

@@ -1,0 +1,13 @@
+<uwsgi>
+    <socket>127.0.0.1:8001</socket>
+    <master/>
+    <processes>2</processes>
+    <chdir>/srv/www/nginx/bluessh</chdir>
+    <pythonpath>..</pythonpath>
+    <module>wsgi</module>
+    <enable-threads>true</enable-threads>
+    <pidfile>/tmp/uwsgi/bluessh.pid</pidfile>
+    <daemonize>/var/log/uwsgi/bluessh.log</daemonize>
+    <reload-on-as>128</reload-on-as>
+</uwsgi>
+

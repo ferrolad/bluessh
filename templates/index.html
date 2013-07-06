@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <script type="text/javascript" src="/static/js/jquery.moatext-min.js"></script>
+{% endblock%}
+
+{% block content %}
+<div style="text-align:center;">
+    <div>
+        <h4>境外主流网站打不开？ <b class="moatext_lens">你需要一个帐号了！</b></h4>
+        <h4>公司网络限制,不能随心所欲上外网？ <b class="moatext_lens">你需要一个帐号了！</b></h4>
+        <h4>Google间歇性抽风？Gmail关键时刻打不开？ <span class="moatext_lens" 
+                style="color:red">你真的需要一个帐号了！！</span></h4>
+    </div>
+    <div style="text-align:left;width:85%;margin:-10px auto;float:right">
+        <div class="moatext_lens"  style="margin-top:15px;float:left;">
+            <h2>高速、稳定、安全</h2>
+            <h2>自助式开通购买</h2>
+            <h3>即时付款,即时开通</h3>
+            <h3>支付宝付款，安全便捷</h3>
+        </div>
+        <div class="y_line"></div>
+        <div style="float:left;">
+            <h4>每月最低只要<b style="color:red;font-size:1.8em">10</b>元，您将拥有:</h4>
+            <ul class="moatext_lens">
+                <li>畅通无阻、自由互联的真实互联网</li>
+                <li>教育网用户可利用IPv6网络<span class="red_bold">免费上网</span></li>
+                <li>突破公司内网限制，自由访问外网</li>
+                <li>全程SSH加密传输，拒绝监视</li>
+                <li>境外网站访问加速</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block logos_3rd %}
+<div class="logos_3rd">
+    <a href="http://python.org/" title="Designed with Python">
+        <img src="/static/img/logos_3rd/python.png" alt="[ Designed with python ]" />
+    </a>
+    <a href="https://www.djangoproject.com/" title="Designed with Django">
+        <img src="/static/img/logos_3rd/django.png" alt="[ Designed with django ]" />
+    </a>
+    <a href="http://www.mysql.com/" title="Powered by MySQL">
+        <img src="/static/img/logos_3rd/mysql.png" alt="[ Powered by MySQL ]" />
+    </a>
+    <a href="http://nginx.net/" title="Powered by nginx">
+        <img src="/static/img/logos_3rd/nginx.png" alt="[ Powered by nginx ]" />
+    </a>
+    <a href="http://aws.amazon.com/ec2/" title="Powered by the Amazon EC2" />
+        <img src="/static/img/logos_3rd/ec2.png" alt="[ Powered by the Amazon EC2 ]" />
+    </a>
+</div>
+{% endblock %}

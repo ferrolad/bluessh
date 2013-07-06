@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title%}
+    {{page_title}} - BlueSSH 
+{%endblock%}
+
+{% block content %}
+<div style="text-align:center;width:100%;background-color:rgb(238,238,238);">
+<div style="width:70%;text-align:left;margin:0 auto;">
+    {{content|safe}}
+</div>
+</div>
+{% endblock%}
+
+{% block share %}
+{% if 0 %}
+    <!-- Baidu Button BEGIN -->
+    <script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=6&amp;uid=664799" ></script>
+    <script type="text/javascript" id="bdshell_js"></script>
+    <script type="text/javascript">
+        document.getElementById("bdshell_js").src = 
+        "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+    </script>
+    <!-- Baidu Button END -->
+{% endif %}
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends "arch.html" %}
+
+{% block arch_head %}
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>!window.jQuery && document.write('<script src="/static/js/jquery-1.7.1.min.js"><\/script>');</script>
+    <script type="text/javascript" src="/static/js/sweet_ajax_tab/sweet-ajax-tab.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/js/sweet_ajax_tab/sweet-ajax-tab.css"/>
+
+    {% block head %}
+    {% endblock %}
+
+    <!--google 分析 start-->
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-30013290-1']);
+        _gaq.push(['_setDomainName', 'bluessh.com']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+         })();
+    </script>
+    <!--google 分析 end-->
+{% endblock %}
+
+{% block arch_body %}
+    <div id="notice_bar">
+        <div id="notice" style="width:90%;float:left;">
+            <!--ajax fetch notic here -->
+            <script type="text/javascript">
+                $(document).ready(function(){
+                        $.getJSON("/content/get_notice/",function(data){
+                            notice = data.notice;
+                            $('#notice').append(notice);
+                            });
+                        });
+            </script>
+        </div>
+    </div>
+	
+    {% if messages %}
+       <link rel="stylesheet" type="text/css" href="/static/js/jmessage_django/css/style.css"/>
+       <script type="text/javascript" src="/static/js/jmessage_django/jmessage_django.js"></script>
+       <ul class="django-messages">
+           {% for message in messages %}
+              <script type="text/javascript">
+                  $.jmessage_django({
+                  message_type : '{{message.tags}}',
+                  message	 : '{{message}}', 
+                  timeout	 : 4000
+                 }); 
+              </script> 
+           {% endfor %}
+       </ul>
+    {% endif %}
+
+    <div>
+        <div style="margin:10px 0 -15px 30px">
+            <a href="/"><img src=" /static/img/logo.png" alt="BlueSSH--Logo"/></a>
+        </div>
+        <ul class="tabContainer">
+            <!--此处生成Tab菜单-->
+        </ul>
+        <div class="clear"></div>
+        <div id="tabContent">
+            <div id="contentHolder">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <p style="text-align:center" >Copyright © All Rights Reserved By 
+        <b><a href="https://twitter.com/#!/GitFree">GitFree</a></b>
+        </p>
+        <div style="margin-bottom:5px;">
+            {% block logos_3rd %}
+            {% endblock %}
+        </div>
+    </div>
+    {% block share %}
+    {% endblock %}
+             
+    <!--百度统计 start-->
+    <script type="text/javascript">
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F3d985e96fbb2aefbfdb809034fc45d47' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <!--百度统计 end-->
+{% endblock %} <!--end of block body-->

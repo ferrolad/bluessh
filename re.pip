@@ -1,0 +1,5 @@
+Django==1.4
+South==0.7.6
+fabric
+PIL
+virtualenv==1.9.1

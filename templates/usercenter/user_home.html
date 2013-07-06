@@ -1,0 +1,40 @@
+{% extends 'usercenter/usercenter.html'%}
+
+{% block title%}
+    用户中心 - BlueSSH
+{% endblock %}
+
+{% block content_right %}
+    <div class="bg_gray"><h3>我的SSH账号</h3></div>
+    <table style="width:70%" class="no_ver_border">
+    {% for ssh in product %}
+        {% if forloop.first %}
+        <tr>
+            <th>账号</th>
+            <th>密码</th>
+            <th>购买日期</th>
+            <th>到期日期</th>
+            <th>续费</th>
+        </tr>
+        {% endif %}
+        <tr>
+            <td><b>{{ ssh.sshuser }}</b></td>
+            <td>{{ ssh.sshpwd }}   
+                <!--<a href="#" style="font-size:0.9em;margin-left:5px;">修改</a>-->
+            </td>
+            <td>{{ ssh.buy_date|date:"Y-m-d" }}</td>
+            <td>{{ ssh.expired_date|date:"Y-m-d" }}</td>
+            <td> <a href="#" style="font-size:0.9em;margin-left:5px;">续费</a></td>
+        </tr>
+    {% empty %}
+        <br/>
+        您尚未购买SSH账号，<a href="/content/ssh+vpn/">点此购买</a>
+    {% endfor %}
+    </table>
+    <!--
+    <div class="bg_gray"><h3>我的VPN账号</h3></div>
+    <p style="color:blue">VPN帐号用户名、密码与SSH帐号一致</p>
+    <p style="color:blue">本站IPSec预共享密钥为 bluessh </p>
+    -->
+{%endblock%}
+

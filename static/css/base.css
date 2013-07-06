@@ -1,0 +1,154 @@
+body{
+    /* Setting default text color, background and a font stack */
+    margin:0;
+    color:#cccccc;
+    font-size:63%;
+    background-color: #1e2428;
+    font-family:Tahoma,Verdana,STHeiTi,sans-serif;
+    /*font-family:Arial, Helvetica, sans-serif;*/
+}
+
+#notice_bar{
+    /* The notice info bar on the top of the page */
+    min-height:10px;
+    font-size:1.4em;
+    font-weight:bold;
+    padding:10px 0;
+    text-align:center;
+    top:0px;
+    background:#1a1a1a;
+    color:#white;
+}
+
+#contentHolder{
+    text-align:left;
+    background-color:#EEEEEE;
+    border:2px solid #FFFFFF;
+    min-height:400px;
+    /* height:300px; */
+    width:1000px;
+    margin:20px auto;
+    color:#444444;
+    padding:15px;
+    font-size:1.5em;
+}
+
+#footer{
+    text-align:center;
+    background:#121b21;
+    border-top:1px solid black;
+    width:100%;
+    position:fixed;
+    bottom:0px;
+}
+
+.logos_3rd {
+    /*margin: 1em;*/
+    margin: 1em 1em 0 0;
+    text-align: center;
+}
+.logos_3rd a{
+    /*margin left right: 1em;*/
+    margin: 0 1em;
+}
+
+a, a:visited {
+    color:#0196e3;
+    text-decoration:none;
+    outline:none;
+}
+
+a:hover {
+    text-decoration:underline;
+}
+
+/*remove the border of img in link*/
+a img {
+	border:none;
+}
+
+/*以下定义无竖格的table样式*/
+table.no_ver_border
+{
+    width: 90%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin:  20px auto;
+    text-align:center
+}
+.no_ver_border tr,td,th {
+	border:none;
+    border-bottom: 1px solid #bbb;
+    padding: 10px 5px;
+}
+.no_ver_border th {
+    font-size: 1.0em;
+}
+
+/*以下定义无边的table样式*/
+table.no_border
+{
+    width: 90%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin:  20px auto;
+    text-align:center
+}
+tr.no_border  td{
+    border-bottom: none;
+    padding: 10px 5px;
+}
+
+/*定义messages样式*/
+li.info{
+    color:lightblue;
+}
+li.success{
+    color:green;
+}
+li.warning{
+    color:orange;
+}
+li.error{
+    color:red;
+}
+
+.moatext_lens li{
+    margin-bottom:10px;
+}
+
+.y_line{
+    height:230px;
+    margin:20px 60px 0 80px;
+    width:2px;
+    float:left;
+    background-image: url(/static/img/line-y.png); 
+    background-repeat:repeat-y;
+}
+
+.x_line{
+    width:100%;
+    /*margin:-45px 60px 0 80px;*/
+    height:2px;
+    clear:both;
+    background-image: url(/static/img/line-y.png); 
+    background-repeat:repeat-x;
+}
+
+.red_bold {
+    color:red;
+    font-weight:bold;
+}
+
+.tb_vps {
+   width:100%;
+   text-align:center;
+   border: 1px solid #bbb;
+}
+.tb_vps td,.tb_vps th {
+   border: 1px solid #bbb;
+}
+
+form {
+    text-align:right;
+}
